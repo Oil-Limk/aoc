@@ -1,11 +1,10 @@
 import sys
 
-input = open(sys.argv[1]).read().rstrip()
-lines = input.split("\n")
+lines = open(sys.argv[1]).readlines()
 
 pos = 50
-ceros = 0
-total_positions = 100
+zeros = 0
+max_pos = 100
 
 for rotation in lines:
     letter = rotation[0]
@@ -16,7 +15,6 @@ for rotation in lines:
         pos += ammount
     pos %= 100
     if pos == 0:
-        ceros += 1
+        zeros += 1
 
-print(ceros)
-
+print(zeros)
