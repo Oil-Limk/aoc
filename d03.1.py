@@ -6,14 +6,13 @@ banks = lines.split('\n')
 result = 0
 
 for bank in banks:
-  bs = list(map(lambda x : int(x), bank))
   bmax = im = i = 0
-  while i < len(bs) - 1:
-    b = bs[i]
+  while i < len(bank) - 1:
+    b = int(bank[i])
     if b > bmax:
       bmax = b
       im = i
     i += 1
-  result += 10 * bmax + max(bs[im+1:])
+  result += 10 * bmax + int(max(bank[im+1:]))
 
 print(result)
