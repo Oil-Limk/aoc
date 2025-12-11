@@ -29,8 +29,9 @@ while loop:
         if nr < 4:
           rmr += [(i, j)]
           result += 1
-          loop = True
-  for i, j in rmr:
-    floor[i][j] = '.'
+  if rmr:
+    for i, j in rmr:
+      floor[i][j] = '.'
+    loop = True
 
 print(result)
