@@ -11,7 +11,7 @@ while i < m:
   while j < m:
     xi, yi = sqrs[i]
     xj, yj = sqrs[j]
-    a = abs((xi - xj + 1) * (yi - yj + 1))
+    a = (abs(xi - xj) + 1) * (abs(yi - yj) + 1)
     if a > result: result = a
     j += 1
   i += 1
