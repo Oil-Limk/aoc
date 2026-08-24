@@ -20,6 +20,7 @@ lint:
 	$(RUN) ruff format --check
 
 format:
+	$(RUN) ruff check --fix
 	$(RUN) ruff format
 
 clean:
