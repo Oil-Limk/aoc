@@ -24,7 +24,7 @@ while i < len(json_str):
             n = pile.pop()
         else:
             n += pile.pop()
-    elif not banned[0] and json_str[i:i+6] == ':"red"':
+    elif not banned[0] and json_str[i : i + 6] == ':"red"':
         banned = (True, len(pile))
     i += 1
 
