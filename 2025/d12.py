@@ -38,16 +38,31 @@ def u_can_tile(a, b, ps):
     area = np.zeros((a, b), dtype=np.int_)
 
     def tetris(pns):
-        print(area)
-        # use presents
+        name = str(area) + str(ps)
+        if name in cache:
+            return cache[name]
 
-        # make it more like tetris
-        # i.e. construct solution from roof to bottom
-        # every turn try new position, if out of positions, try next piece
-        # if no piece left, then False
-        # use cache, of course
+        if sum(pns) == 0:
+            return True
 
-        cache[str(area) + str(pns)] = False
+        for i in range(len(pns)):
+            if pns[i] == 0:
+                continue
+            pns[i] -= 1
+            for piece in presents[i]:
+                for col in range(b-2):
+                    for row in range(a-2):
+                        if np.any(area[row:row+3,col:col+3] & piece):
+                            continue
+                        area[row:row+3,col:col+3] ^= piece
+                        if tetris(pns.copy()):
+                            print("done")
+                            return True
+                        area[row:row+3,col:col+3] ^= piece
+                        break
+            pns[i] += 1
+
+        cache[name] = False
         return False
 
     u_can = tetris(ps)
