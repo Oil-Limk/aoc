@@ -50,15 +50,15 @@ def u_can_tile(a, b, ps):
                 continue
             pns[i] -= 1
             for piece in presents[i]:
-                for col in range(b-2):
-                    for row in range(a-2):
-                        if np.any(area[row:row+3,col:col+3] & piece):
+                for col in range(b - 2):
+                    for row in range(a - 2):
+                        if np.any(area[row : row + 3, col : col + 3] & piece):
                             continue
-                        area[row:row+3,col:col+3] ^= piece
+                        area[row : row + 3, col : col + 3] ^= piece
                         if tetris(pns.copy()):
                             print("done")
                             return True
-                        area[row:row+3,col:col+3] ^= piece
+                        area[row : row + 3, col : col + 3] ^= piece
                         break
             pns[i] += 1
 

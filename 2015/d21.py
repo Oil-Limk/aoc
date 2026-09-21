@@ -4,9 +4,9 @@ from itertools import combinations
 with open(sys.argv[1]) as f:
     lines = f.read().strip().split("\n")
 
-boss_hit_points = int(lines[0].split(' ')[-1])
-boss_damage = int(lines[1].split(' ')[-1])
-boss_armor = int(lines[2].split(' ')[-1])
+boss_hit_points = int(lines[0].split(" ")[-1])
+boss_damage = int(lines[1].split(" ")[-1])
+boss_armor = int(lines[2].split(" ")[-1])
 
 weapons = [
     (8, 4, 0),
