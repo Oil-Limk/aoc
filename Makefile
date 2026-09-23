@@ -11,7 +11,7 @@ run: setup
 
 setup:
 	@if [ -d "$(YEAR)" ]; then echo "directory $(YEAR) already exists"; else mkdir $(YEAR); fi
-	@if [ -f "$(PYFILE)" ]; then echo "file $(PYFILE) already exists"; else touch $(PYFILE); fi
+	@if [ -f "$(PYFILE)" ]; then echo "file $(PYFILE) already exists"; else cp example.py $(PYFILE); fi
 	@if [ -f "$(TXTFILE)" ]; then echo "file $(TXTFILE) already exists"; else touch $(TXTFILE); fi
 	clear
 
