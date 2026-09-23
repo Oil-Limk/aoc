@@ -1,13 +1,16 @@
 import sys
-import string
 
 with open(sys.argv[1]) as f:
     lines = f.read().strip().split("\n")
 
 result = 0
 
+
 def rotate(s, n):
-    return "".join(map(lambda x: " " if x == "-" else chr(ord("a") + ((ord(x) + n - ord("a")) % 26)), s))
+    return "".join(
+        " " if x == "-" else chr(ord("a") + ((ord(x) + n - ord("a")) % 26)) for x in s
+    )
+
 
 for l in lines:
     checksum = l[-6:-1]
