@@ -1,5 +1,5 @@
 YEAR = 2016
-DAY = 08
+DAY = 09
 PYFILE = $(YEAR)/d$(DAY).py
 TXTFILE = $(YEAR)/d$(DAY).txt
 RUN = @uv run
