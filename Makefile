@@ -1,5 +1,5 @@
 YEAR = 2016
-DAY = 05
+DAY = 06
 PYFILE = $(YEAR)/d$(DAY).py
 TXTFILE = $(YEAR)/d$(DAY).txt
 RUN = @uv run
@@ -16,10 +16,12 @@ setup:
 	clear
 
 lint:
+	clear
 	$(RUN) ruff check
 	$(RUN) ruff format --check
 
 format:
+	clear
 	$(RUN) ruff check --fix
 	$(RUN) ruff format
 
